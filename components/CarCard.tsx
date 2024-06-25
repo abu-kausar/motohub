@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import CarDetails from './CarDetails';
 
 interface CarCardProps {
@@ -15,10 +15,9 @@ const CarCard = ({ car }: CarCardProps) => {
 
     const carRent = calculateCarRent(city_mpg, year);
     const [isOpen, setIsOpen] = useState(false);
-    console.log(isOpen, "in card page");
 
     return (
-        <div className='car-card mt-3 group'>
+        <div className='car-card group'>
             <div className='car-card__content'>
                 <h2 className='car-card__content-title'>
                     {make} {model}
@@ -35,7 +34,8 @@ const CarCard = ({ car }: CarCardProps) => {
             </p>
 
             <div className='relative w-full h-40 my-3 object-contain'>
-                <Image src="/hero.png" alt='car model' fill priority/>
+                <Image src='/hero.png' alt='car model' fill priority/>
+                {/* <Image src={generateCarImageUrl(car)} alt='car model' fill priority/> */}
             </div>
 
             <div className='relative flex w-full mt-2'>
