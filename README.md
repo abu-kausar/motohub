@@ -1,6 +1,6 @@
 # MotoHub
 
-![CHEESE!](montoHub.png)
+![CHEESE!](motoHub.png)
 
 ## Live Link
 
